@@ -13,7 +13,7 @@ export default function Navbar() {
 
             <ul className={styles.menu}>
               <li>
-                <Link to='/'>Products</Link>
+                <Link to='/products'>Products</Link>
               </li>
             </ul>
         </div>
