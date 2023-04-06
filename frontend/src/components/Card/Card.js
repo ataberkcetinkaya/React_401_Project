@@ -4,22 +4,22 @@ import { Box, Image, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 
-export default function Card() {
+export default function Card({product}) {
   return (
     <div className={styles.theMargin}>
         <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
             <Link to='/product/1'>
-                <Image src='https://bit.ly/sage-adebayo' alt='product' />
+                <Image src={product.photos[0]} alt='product' loading="lazy" />
 
                 <Box p='6'>
                     <Box d='flex' alignItems='baseline'>
-                        Apple
+                        {product.title}
                     </Box>
                     <Box mt="1" fontWeight="semibold" fontSize='xl'>
-                        iPhone 14 Pro Max
+                        {product.description}
                     </Box>
                     <Box mt="1" fontWeight="semibold" fontSize='xl'>
-                        999.99$
+                        {product.price}
                     </Box>
                 </Box>
             </Link>
