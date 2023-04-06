@@ -6,7 +6,7 @@ import { getAllProducts } from '../../api'
 
 export default function Products() {
 
-  const { isLoading, error, data } = useQuery('products', getAllProducts)
+  const { isLoading, error, data } = useQuery('products', getAllProducts) //products accessable in react-query devtools
 
   if (isLoading) return 'Loading...'
 
