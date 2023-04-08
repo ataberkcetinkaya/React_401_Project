@@ -8,7 +8,7 @@ export default function Card({product}) {
   return (
     <div className={styles.theMargin}>
         <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-            <Link to='/product/1'>
+            <Link to={`/product/${product._id}`}>
                 <Image src={product.photos[0]} alt='product' loading="lazy" />
 
                 <Box p='6'>
