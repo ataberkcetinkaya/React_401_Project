@@ -20,7 +20,7 @@ export default function Navbar() {
 
         <div className={styles.right}>
           <Link to='/login'><Button colorScheme='blue'>Login</Button></Link>
-          <Link to='/register'><Button colorScheme='blue'>Register</Button></Link>
+          <Link to='/register'><Button colorScheme='red'>Register</Button></Link>
         </div>  
     </nav>
   )
