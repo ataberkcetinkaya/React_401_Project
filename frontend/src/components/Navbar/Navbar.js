@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './styles.module.css'
 import { Button } from '@chakra-ui/react'
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function Navbar() {
 
-  const { loggedIn } = useAuth();
+  const { loggedIn, logout } = useAuth();
+  const navigate = useNavigate();
+    const handleLogOut = async () => {
+        await logout();
+        navigate('/');
+    };
 
   return (
     <nav className={styles.nav}>
@@ -32,7 +37,7 @@ export default function Navbar() {
           {loggedIn && (
             <>
               <Link to='/profile'><Button colorScheme='gray'>Profile</Button></Link>
-              <Link to='/logout'><Button colorScheme='gray'>Logout</Button></Link>
+              <Link to='/logout'><Button colorScheme='gray' onClick={handleLogOut}>Logout</Button></Link>
               </>
           )}
         </div>  
