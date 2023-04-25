@@ -39,9 +39,9 @@ export default function Navbar() {
           {loggedIn && (
             <>
               {items?.length > 0 && (
-                <Link to='/basket'><Button colorScheme='gray'>Basket: {items.length}</Button></Link>
+                <Link to='/cart'><Button colorScheme='gray' marginRight='5px'>Cart: {items.length}</Button></Link>
               )}
-              <Link to='/profile'><Button colorScheme='gray'>Profile</Button></Link>
+              <Link to='/profile'><Button colorScheme='gray' marginRight='5px'>Profile</Button></Link>
               <Link to='/logout'><Button colorScheme='gray' onClick={handleLogOut}>Logout</Button></Link>
               </>
           )}
