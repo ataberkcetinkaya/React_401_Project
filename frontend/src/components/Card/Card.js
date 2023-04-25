@@ -23,8 +23,6 @@ export default function Card({product}) {
                     </Box>
                 </Box>
             </Link>
-
-            <Button colorScheme='blue' variant='outline'>Add to cart</Button>
         </Box>
     </div>
   )

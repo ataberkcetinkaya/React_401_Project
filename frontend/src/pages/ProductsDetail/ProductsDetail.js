@@ -4,10 +4,12 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getProductById } from '../../api';
 import { Box, Heading, Text, Button } from '@chakra-ui/react'
 import ImageGallery from 'react-image-gallery';
+import { useBasket } from '../../contexts/BasketContext';
 
 export default function ProductsDetail() {
 
   const { product_id } = useParams();
+  const { addToBasket, items } = useBasket();
 
   const { isLoading, error, data } = useQuery(['product', product_id], () => getProductById(product_id));
 
@@ -29,6 +31,8 @@ export default function ProductsDetail() {
     }
   });
 
+  const findBasketItem = items.find((item) => item._id === product_id);
+
   return (
     <>
       <div style={{ marginTop: '2vh', marginBottom: '2vh', textAlign: 'center' }}>
@@ -40,6 +44,12 @@ export default function ProductsDetail() {
           <Text>{dateString}</Text>
         </Box>
       </div><ImageGallery items={images} />
+      <div style={{ marginTop: '2vh', marginBottom: '2vh', textAlign: 'center' }}>
+        <Button colorScheme={findBasketItem ? 'green' : 'blue'} onClick={() => addToBasket(data, findBasketItem)}>
+          {findBasketItem ? 'Remove from cart' : 'Add to cart'}
+        </Button>
+      </div>
+      
     </>
   )
 }
