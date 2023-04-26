@@ -5,24 +5,24 @@ import { Link } from 'react-router-dom';
 
 export default function Basket() {
 
-    const { items } = useBasket();
+    const { items, removeFromBasket } = useBasket();
 
     const total = items.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div>
+    <Box p="5">
         {items.length < 1 && <Alert status="warning">You have no any items here.</Alert>}
 
         {items.length > 0 && 
         <>
             <ul>
                 {items.map((item) => (
-                    <li key={item._id} style={{ marginTop: '20px' }}>
+                    <li key={item._id} style={{ marginBottom: '20px' }}>
                         <Link to={`/product/${item._id}`}>
-                            Title: {item.title} / Price: {item.price}$
-                            <Image htmlWidth={100} src={item.photos[0]} alt={item.title} />
+                            <Text fontSize="18">Title: {item.title} / Price: {item.price}$</Text>
+                            <Image htmlWidth={200} src={item.photos[0]} alt={item.title} />
                         </Link>
-                        <Button mt="2" size="sm" colorScheme="red">Remove</Button>
+                        <Button mt="2" size="sm" colorScheme="red" onClick={() => removeFromBasket(item._id)}>Remove</Button>
                     </li>
                 ))}    
             </ul>
@@ -34,7 +34,6 @@ export default function Basket() {
             </Box>
         </>
         }
-        
-    </div>
+    </Box>
   )
 }

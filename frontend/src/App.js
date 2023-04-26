@@ -8,6 +8,7 @@ import Products from './pages/Products/Products';
 import ProductsDetail from './pages/ProductsDetail/ProductsDetail';
 import Profile from './pages/Profile/Profile';
 import Basket from './pages/Basket/Basket';
+import Error404 from './pages/Error404/Error404';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/register" element={<Register />}></Route>
               <Route path="/profile" element={<Profile />}></Route>
               <Route path="/cart" element={<Basket />}></Route>
+              <Route path="*" element={<Error404 />}></Route>
             </Routes>
           </div>
           
