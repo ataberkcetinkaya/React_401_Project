@@ -45,7 +45,7 @@ export default function ProductsDetail() {
         </Box>
       </div><ImageGallery items={images} />
       <div style={{ marginTop: '2vh', marginBottom: '2vh', textAlign: 'center' }}>
-        <Button colorScheme={findBasketItem ? 'green' : 'blue'} onClick={() => addToBasket(data, findBasketItem)}>
+        <Button colorScheme={findBasketItem ? 'red' : 'blue'} onClick={() => addToBasket(data, findBasketItem)}>
           {findBasketItem ? 'Remove from cart' : 'Add to cart'}
         </Button>
       </div>

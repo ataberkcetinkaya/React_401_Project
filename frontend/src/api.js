@@ -45,3 +45,8 @@ export const fetchLogin = async (input) => {
     const { data } = await axios.post('http://localhost:4000/auth/login', input)
     return data
 }
+
+export const postOrder = async (values) => {
+    const { data } = await axios.post('http://localhost:4000/order', values)
+    return data
+}

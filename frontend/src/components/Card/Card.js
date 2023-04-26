@@ -29,7 +29,7 @@ export default function Card({product}) {
                     </Box>
                 </Box>
             </Link>
-            <Button colorScheme={findBasketItem ? 'green' : 'blue'} onClick={() => addToBasket(product, findBasketItem)}>
+            <Button colorScheme={findBasketItem ? 'red' : 'blue'} onClick={() => addToBasket(product, findBasketItem)}>
                 {findBasketItem ? 'Remove from cart' : 'Add to cart'}
             </Button>
         </Box>

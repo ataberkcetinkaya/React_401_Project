@@ -25,11 +25,16 @@ const BasketProvider = ({ children }) => {
     setItems(newItems);
   };
 
+  const clearBasket = () => {
+    setItems([]);
+  };
+
   const values = {
     items,
     setItems,
     addToBasket,
     removeFromBasket,
+    clearBasket,
   };
  
   return (
